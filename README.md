@@ -6,6 +6,7 @@
 /search -> Search
 
 /users/:id -> See User
+/users/logout -> Log Out
 /users/edit -> Edit MY Profile
 /users/delete -> Delete MY Profile
 
