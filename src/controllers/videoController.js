@@ -7,7 +7,7 @@ export const trending = (req, res) => {
             createdAt: "2 minutes ago",
             views: 59,
             id: 1,
-        }
+        },
     ];
     res.render("home", { pageTitle: "Home", videos });
 }
