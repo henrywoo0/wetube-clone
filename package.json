@@ -7,7 +7,7 @@
     "url": "git+https://github.com/whitebear05/wetube-reloaded.git"
   },
   "scripts": {
-    "dev": "nodemon --exec babel-node src/server.js"
+    "dev": "nodemon --exec babel-node src/init.js"
   },
   "author": "whitebear<woojs0505@naver.com>",
   "license": "MIT",
