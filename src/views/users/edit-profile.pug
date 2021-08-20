@@ -1,4 +1,4 @@
-extends base 
+extends ../base 
 
 block content 
     if errorMessage
@@ -8,5 +8,6 @@ block content
         input(placeholder="Email", name="email", type="email", required, value=loggedInUser.email)
         input(placeholder="Location", name="location", type="text", required, value=loggedInUser.location)
         input(type="submit", value="Update Profile")
-        hr
-        a(href="change-password") Change Password $rarr;
+        if !loggedInUser.socialOnly
+            hr
+            a(href="change-password") Change Password &rarr;
