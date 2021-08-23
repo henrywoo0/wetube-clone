@@ -9,7 +9,11 @@ import {
   getChangePassword,
   postChangePassword,
 } from "../controllers/userController";
-import { protectorMiddleware, publicOnlyMiddleware } from "../middlewares";
+import {
+  protectorMiddleware,
+  publicOnlyMiddleware,
+  uploadFiles,
+} from "../middlewares";
 
 const userRouter = express.Router();
 
