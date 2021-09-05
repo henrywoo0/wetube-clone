@@ -18,6 +18,10 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.js$/,
+        use: ["style-loader", "css-loader", "sass-loader"],
+      },
     ],
   },
 };
