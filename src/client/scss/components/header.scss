@@ -1,7 +1,7 @@
 header {
     padding: 20px 50px;
     display: flex;
-    justify-self: space-between;
+    justify-content: space-between;
     align-items: center;
     .header__logo{
         color: $red;
@@ -26,5 +26,11 @@ header {
         color: $bg;
         padding: 5px 10px;
         border-radius:5px;
+    }
+    .header__avatar{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        font-size: 30px;
     }
 }
