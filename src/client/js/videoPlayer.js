@@ -4,15 +4,26 @@ const muteBtn = document.getElementById("mute");
 const time = document.getElementById("time");
 const volume = document.getElementById("volume");
 
-const handlePlay = (e) => {
+const handlePlayClick = (e) => {
   if (video.paused) {
+    playBtn.innerText = "Pause";
     video.play();
   } else {
     video.pause();
   }
 };
 
+const handlePause = (e) => {
+  playBtn.innerText = "Play";
+};
+
+const handlePlay = (e) => {
+  playBtn.innerText = "Pause";
+};
+
 const handleMute = (e) => {};
 
-playBtn.addEventListener("click", handlePlay);
+playBtn.addEventListener("click", handlePlayClick);
 muteBtn.addEventListener("click", handleMute);
+video.addEventListener("pause", handlePause);
+video.addEventListener("play", handlePlay);
