@@ -1,6 +1,6 @@
 # Wetube Clone
 
-### YouTube를 클론코딩 해보자!!
+### YouTube를 클론코딩 해보자 !
 
 / -> Home <br>
 /join -> Join <br>
