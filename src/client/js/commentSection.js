@@ -42,7 +42,6 @@ const handleSubmit = async (event) => {
 };
 
 const handleClickDelete = async (event) => {
-  event.preventDefault();
   const videoComment = document.querySelector(".video__comment");
   const commentId = videoComment.dataset.id;
   const { status } = await fetch(`/api/comments/${commentId}`, {
