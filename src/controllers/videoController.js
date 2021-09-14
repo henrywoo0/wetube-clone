@@ -136,6 +136,7 @@ export const createComment = async (req, res) => {
   } = req;
   const video = await Video.findById(id);
   if (!video) {
+    req.flash("error", "Cannot find the video.");
     return res.sendStatus(404);
   }
   const comment = await Comment.create({
@@ -145,5 +146,24 @@ export const createComment = async (req, res) => {
   });
   video.comments.push(comment._id);
   video.save();
-  return res.sendStatus(201);
+  return res.status(201).json({ newCommentId: comment._id });
+};
+
+export const deleteComment = async (req, res) => {
+  const {
+    user: { _id },
+  } = req.session;
+  const { id } = req.params;
+  const comment = await Comment.findById(id);
+  if (!comment) {
+    req.flash("error", "Cannot find the comment.");
+    return res.sendStatus(404);
+  }
+  if (String(comment.owner) !== String(_id)) {
+    req.flash("error", "Your are not the owner of the comment.");
+    return res.sendStatus(403);
+  }
+  Comment.findByIdAndDelete(id);
+  req.flash("ok", "Delete the comment successfully.");
+  return res.sendStatus(200);
 };
