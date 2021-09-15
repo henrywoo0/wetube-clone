@@ -1,6 +1,7 @@
+const { response } = require("express");
+
 const videoContainer = document.getElementById("videoContainer");
 const form = document.getElementById("commentForm");
-const deleteCommentBtn = document.getElementById("deleteComment");
 
 const addComment = (text, id) => {
   const videoComments = document.querySelector(".video__comments ul");
@@ -41,16 +42,6 @@ const handleSubmit = async (event) => {
   }
 };
 
-const handleClickDelete = async (event) => {
-  const videoComment = document.querySelector(".video__comment");
-  const commentId = videoComment.dataset.id;
-  const { status } = await fetch(`/api/comments/${commentId}`, {
-    method: "DELETE",
-  });
-};
-
 if (form) {
   form.addEventListener("submit", handleSubmit);
 }
-
-deleteCommentBtn.addEventListener("click", handleClickDelete);
